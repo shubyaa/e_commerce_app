@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/MyCart.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
+import 'package:e_commerce_app/screens/Increment.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -103,6 +104,59 @@ Widget ProductCardWidget(
                 ),
               )
             ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget productListCard() {
+  return Card(
+    elevation: 0.0,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  right: 10,
+                ),
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: productBackgroundColor,
+                ),
+                padding: EdgeInsets.all(8.0),
+                child: Image.asset(
+                  "assets/res/image.png",
+                  fit: BoxFit.contain,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Loose Shirt",
+                    style: greyTextProuct,
+                  ),
+                  Text(
+                    "₹ 250",
+                    style: productPrice,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Increment(
+            count: 10,
           ),
         ],
       ),

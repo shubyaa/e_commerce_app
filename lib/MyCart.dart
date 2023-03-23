@@ -1,8 +1,10 @@
+import 'package:e_commerce_app/components/widgets.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:e_commerce_app/screens/Increment.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});
@@ -35,39 +37,65 @@ class _MyCartState extends State<MyCart> {
           backgroundColor: Colors.transparent,
           elevation: 0.0,
         ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Card(
-                elevation: 0.0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: primaryGrey,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  productListCard(),
+                  productListCard(),
+                  productListCard(),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15.0,
+                      vertical: 8.0,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Sub Total : ",
+                          style: subTotalText,
                         ),
-                        padding: EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          "assets/res/image.png",
-                          fit: BoxFit.contain,
+                        Text(
+                          "Rs. 300",
+                          style: productPrice,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: ElevatedButton(
+                        style: redButtonStyle,
+                        onPressed: () {},
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 100,
+                            vertical: 15.0,
+                          ),
+                          child: Text("Apply Filter", style: redButtonText),
                         ),
                       ),
-                      Column()
-                    ],
+                    ),
                   ),
-                ),
-              )
-            ],
-          ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

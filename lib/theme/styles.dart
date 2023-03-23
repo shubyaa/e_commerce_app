@@ -39,6 +39,10 @@ var capsuleTabFilledStyle = ButtonStyle(
 );
 
 // Colors and regarding product item card
+TextStyle subTotalText = GoogleFonts.openSans(
+  fontSize: 15,
+  fontWeight: FontWeight.w600,
+);
 
 TextStyle productName = GoogleFonts.openSans(
   fontSize: 15,
@@ -83,6 +87,12 @@ TextStyle inActiveFilterTabText = GoogleFonts.openSans(
 TextStyle redButtonText = GoogleFonts.openSans(
   fontSize: 15,
   fontWeight: FontWeight.w600,
+);
+
+TextStyle greyTextProuct = GoogleFonts.openSans(
+  fontSize: 15,
+  fontWeight: FontWeight.w500,
+  color: primaryGrey,
 );
 
 ButtonStyle redButtonStyle = ElevatedButton.styleFrom(
