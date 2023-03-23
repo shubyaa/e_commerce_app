@@ -79,3 +79,16 @@ TextStyle inActiveFilterTabText = GoogleFonts.openSans(
   fontWeight: FontWeight.w600,
   color: Colors.black,
 );
+
+TextStyle redButtonText = GoogleFonts.openSans(
+  fontSize: 15,
+  fontWeight: FontWeight.w600,
+);
+
+ButtonStyle redButtonStyle = ElevatedButton.styleFrom(
+  backgroundColor: primaryColor,
+  foregroundColor: Colors.white,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(35),
+  ),
+);

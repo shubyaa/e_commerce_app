@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/MyCart.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:flutter/material.dart';
@@ -57,47 +58,54 @@ Widget sectionHead(String title, Function seeAll) {
   );
 }
 
-Container ProductCardWidget(String assetImage, String title, int rate) {
-  return Container(
-    width: 180,
-    padding: EdgeInsets.all(8.0),
-    child: Column(
-      children: [
-        Container(
-          padding: EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: productBackgroundColor,
-          ),
-          child: Image.asset(
-            assetImage,
-            fit: BoxFit.fitHeight,
-            height: 133,
-            width: 180,
-          ),
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                overflow: TextOverflow.visible,
-                maxLines: 2,
-                style: productName,
-              ),
+Widget ProductCardWidget(
+    String assetImage, String title, int rate, BuildContext context) {
+  return InkWell(
+    onTap: () {
+      Navigator.of(context, rootNavigator: true)
+          .push(MaterialPageRoute(builder: (context) => MyCart()));
+    },
+    child: Container(
+      width: 180,
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: productBackgroundColor,
             ),
-            Text(
-              "₹. $rate",
-              style: GoogleFonts.openSans(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
+            child: Image.asset(
+              assetImage,
+              fit: BoxFit.fitHeight,
+              height: 133,
+              width: 180,
+            ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  overflow: TextOverflow.visible,
+                  maxLines: 2,
+                  style: productName,
+                ),
               ),
-            )
-          ],
-        ),
-      ],
+              Text(
+                "₹. $rate",
+                style: GoogleFonts.openSans(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     ),
   );
 }

@@ -150,14 +150,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
+                    ProductCardWidget("assets/res/image.png",
+                        "Long Sleeve Shirts", 300, context),
+                    ProductCardWidget("assets/res/image.png",
+                        "Short Sleeve Shirts", 200, context),
                     ProductCardWidget(
-                        "assets/res/image.png", "Long Sleeve Shirts", 300),
-                    ProductCardWidget(
-                        "assets/res/image.png", "Short Sleeve Shirts", 200),
-                    ProductCardWidget(
-                        "assets/res/image.png", "Loose Jeans", 100),
-                    ProductCardWidget(
-                        "assets/res/image.png", "Red half Tshirts", 300),
+                        "assets/res/image.png", "Loose Jeans", 100, context),
+                    ProductCardWidget("assets/res/image.png",
+                        "Red half Tshirts", 300, context),
                   ],
                 ),
               ),
@@ -174,11 +174,18 @@ class _HomeScreenState extends State<HomeScreen> {
     TextStyle _activeTextStyle = activeFilterTabText;
     Color _activeButtonColor = primaryColor;
 
-    SfRangeValues _rangeValues = SfRangeValues(0, 500);
+    SfRangeValues _rangeValues = SfRangeValues(0.0, 500.0);
+    SfRangeValues _rangeValuesForDistance = SfRangeValues(15.0, 50.0);
+    double start_value = _rangeValues.start;
+    double end_value = _rangeValues.end;
+
+    double start_value_distance = _rangeValues.start;
+    double end_value_distance = _rangeValues.end;
 
     return InkWell(
       onTap: () {
         showModalBottomSheet(
+            useSafeArea: true,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15.0),
@@ -195,6 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       top: 10.0,
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ListTile(
@@ -255,9 +263,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                         ),
-                        Text(
-                          "Pricing",
-                          style: appBarTitle,
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Pricing",
+                              style: appBarTitle,
+                            ),
+                            Text(
+                              "₹ ${start_value.round()} - ₹ ${end_value.round()}",
+                              style: productPrice,
+                            ),
+                          ],
                         ),
                         SfRangeSlider(
                           showLabels: false,
@@ -265,6 +283,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           onChanged: (value) {
                             setState(() {
                               _rangeValues = value;
+                              start_value = value.start;
+                              end_value = value.end;
                             });
                           },
                           min: 0.0,
@@ -272,6 +292,51 @@ class _HomeScreenState extends State<HomeScreen> {
                           activeColor: primaryColor,
                           inactiveColor: Colors.grey[300],
                         ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Distance",
+                              style: appBarTitle,
+                            ),
+                            Text(
+                              "${start_value_distance.round()} km - ${end_value_distance.round()} km",
+                              style: productPrice,
+                            ),
+                          ],
+                        ),
+                        SfRangeSlider(
+                          showLabels: false,
+                          values: _rangeValuesForDistance,
+                          onChanged: (value) {
+                            setState(() {
+                              _rangeValuesForDistance = value;
+                              start_value_distance = value.start;
+                              end_value_distance = value.end;
+                            });
+                          },
+                          min: 0.0,
+                          max: 100,
+                          activeColor: primaryColor,
+                          inactiveColor: Colors.grey[300],
+                        ),
+                        Center(
+                          child: ElevatedButton(
+                            style: redButtonStyle,
+                            onPressed: () {},
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 100,
+                                vertical: 15.0,
+                              ),
+                              child: Text("Apply Filter", style: redButtonText),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        )
                       ],
                     ),
                   );
