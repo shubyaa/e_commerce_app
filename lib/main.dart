@@ -1,3 +1,9 @@
+import 'package:e_commerce_app/screens/boarding_screens/login.dart';
+import 'package:e_commerce_app/screens/boarding_screens/onboarding1.dart';
+import 'package:e_commerce_app/screens/boarding_screens/onboarding2.dart';
+import 'package:e_commerce_app/screens/boarding_screens/onboarding3.dart';
+import 'package:e_commerce_app/screens/boarding_screens/signup.dart';
+import 'package:e_commerce_app/screens/nav_screens/drawer.dart';
 import 'package:e_commerce_app/screens/nav_screens/favourites.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,12 +24,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          // primarySwatch: primaryColor,
-          ),
-      home: const MyHomePage(),
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            // primarySwatch: primaryColor,
+            ),
+        home: const SignupPage());
   }
 }
 

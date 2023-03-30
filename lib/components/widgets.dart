@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/MyCart.dart';
+import 'package:e_commerce_app/screens/MyCart.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:e_commerce_app/screens/Increment.dart';
@@ -9,12 +9,12 @@ Card CategoryCardWidget(String imageAsset, String text) {
   return Card(
     elevation: 0.0,
     shape: RoundedRectangleBorder(
-      side: BorderSide(
+      side: const BorderSide(
         color: primaryGrey,
       ),
       borderRadius: BorderRadius.circular(10),
     ),
-    margin: EdgeInsets.symmetric(
+    margin: const EdgeInsets.symmetric(
       horizontal: 10,
     ),
     child: Padding(
@@ -68,11 +68,11 @@ Widget ProductCardWidget(
     },
     child: Container(
       width: 180,
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: productBackgroundColor,

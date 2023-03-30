@@ -1,9 +1,10 @@
+import 'dart:math';
 import 'package:e_commerce_app/components/widgets.dart';
+import 'package:e_commerce_app/screens/nav_screens/drawer.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
@@ -22,6 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        endDrawerEnableOpenDragGesture: true,
+        drawerEnableOpenDragGesture: true,
         backgroundColor: backgroudColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -32,7 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DrawerPage()));
+                    },
                     icon: const Icon(
                       Icons.notes_rounded,
                       size: 30,
@@ -40,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.pin_drop),
+                      const Icon(Icons.pin_drop),
                       Text(
                         "15/35 Street Texas",
                         textAlign: TextAlign.center,
@@ -50,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  Icon(
+                  const Icon(
                     Icons.notifications,
                     size: 30,
                     color: Colors.grey,
@@ -58,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   top: 30,
                 ),
                 child: Text(
@@ -71,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
@@ -83,11 +89,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   top: 35,
                   bottom: 35,
                 ),
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 8.0,
                   horizontal: 10,
                 ),
@@ -104,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: TextField(
                         controller: _editingController,
                         showCursor: false,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Search Items",
                           prefixIcon: Icon(
                             Icons.search_rounded,
@@ -226,14 +232,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.close,
                               color: Colors.black,
                             ),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
+                          margin: const EdgeInsets.only(
                             bottom: 8.0,
                           ),
                           decoration: BoxDecoration(
@@ -248,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: appBarTitle,
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(vertical: 10.0),
+                          margin: const EdgeInsets.symmetric(vertical: 10.0),
                           child: ToggleSwitch(
                             animate: true,
                             animationDuration: 200,
@@ -326,7 +332,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             style: redButtonStyle,
                             onPressed: () {},
                             child: Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                 horizontal: 100,
                                 vertical: 15.0,
                               ),
@@ -334,7 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15.0,
                         ),
                       ],
@@ -345,12 +351,12 @@ class _HomeScreenState extends State<HomeScreen> {
             });
       },
       child: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           color: primaryColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Icon(
+        child: const Icon(
           Icons.tune,
           color: Colors.white,
           size: 20,
