@@ -39,72 +39,75 @@ class _OrderScreenState extends State<OrderScreen>
 
     _tabController = TabController(vsync: this, length: myTabs.length);
 
-    return Scaffold(
-      backgroundColor: backgroudColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "My Orders",
-          style: appBarTitle,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        bottom: TabBar(
-          labelStyle: GoogleFonts.openSans(
-            fontWeight: FontWeight.w600,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Scaffold(
+        backgroundColor: backgroudColor,
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "My Orders",
+            style: appBarTitle,
           ),
-          unselectedLabelColor: primaryGrey,
-          labelColor: primaryColor,
-          controller: _tabController,
-          indicator: UnderlineTabIndicator(
-            borderSide: BorderSide(
-              width: 3,
-              color: primaryColor,
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          bottom: TabBar(
+            labelStyle: GoogleFonts.openSans(
+              fontWeight: FontWeight.w600,
             ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          tabs: myTabs,
-          isScrollable: true,
-        ),
-      ),
-      body: SafeArea(
-        child: TabBarView(
-          controller: _tabController,
-          children: [
-            SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  ProductListCardWidget(
-                    "assets/res/image.png",
-                    "Loose Shirt",
-                    300,
-                    "25/10/2021",
-                  ),
-                  ProductListCardWidget(
-                    "assets/res/image.png",
-                    "Loose Shirt",
-                    300,
-                    "25/10/2021",
-                  ),
-                  ProductListCardWidget(
-                    "assets/res/image.png",
-                    "Loose Shirt",
-                    300,
-                    "25/10/2021",
-                  ),
-                  ProductListCardWidget(
-                    "assets/res/image.png",
-                    "Loose Shirt",
-                    300,
-                    "25/10/2021",
-                  ),
-                ],
+            unselectedLabelColor: primaryGrey,
+            labelColor: primaryColor,
+            controller: _tabController,
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(
+                width: 3,
+                color: primaryColor,
               ),
+              borderRadius: BorderRadius.circular(10),
             ),
-            Row(),
-          ],
+            tabs: myTabs,
+            isScrollable: true,
+          ),
+        ),
+        body: SafeArea(
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              SingleChildScrollView(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    ProductListCardWidget(
+                      "assets/res/image.png",
+                      "Loose Shirt",
+                      300,
+                      "25/10/2021",
+                    ),
+                    ProductListCardWidget(
+                      "assets/res/image.png",
+                      "Loose Shirt",
+                      300,
+                      "25/10/2021",
+                    ),
+                    ProductListCardWidget(
+                      "assets/res/image.png",
+                      "Loose Shirt",
+                      300,
+                      "25/10/2021",
+                    ),
+                    ProductListCardWidget(
+                      "assets/res/image.png",
+                      "Loose Shirt",
+                      300,
+                      "25/10/2021",
+                    ),
+                  ],
+                ),
+              ),
+              Row(),
+            ],
+          ),
         ),
       ),
     );

@@ -84,7 +84,7 @@ class _MyCartState extends State<MyCart> {
                             horizontal: 100,
                             vertical: 15.0,
                           ),
-                          child: Text("Apply Filter", style: redButtonText),
+                          child: Text("Add to Cart", style: redButtonText),
                         ),
                       ),
                     ),

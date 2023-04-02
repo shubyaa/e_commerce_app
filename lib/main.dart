@@ -1,6 +1,4 @@
-import 'package:e_commerce_app/screens/boarding_screens/signup.dart';
-import 'package:e_commerce_app/screens/boarding_screens/splash.dart';
-import 'package:e_commerce_app/screens/drawer_screens/settings.dart';
+import 'package:e_commerce_app/screens/nav_screens/favourites.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -20,12 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            // primarySwatch: primaryColor,
-            ),
-        home: const SplashScreen());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+          // primarySwatch: primaryColor,
+          ),
+      home: const MyHomePage(),
+    );
   }
 }
 
@@ -82,7 +80,7 @@ List<Widget> _buildScreens() {
     HomeScreen(),
     // HomePage(),
     OrderScreen(),
-    OrderScreen(),
+    FavouriteScreen(),
     ProfileScreen(),
   ];
 }

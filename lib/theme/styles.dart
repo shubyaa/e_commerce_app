@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
+import 'package:e_commerce_app/theme/colors.dart';
 
 const navHeadStyle = TextStyle(
   fontSize: 18,
@@ -71,6 +72,11 @@ TextStyle appBarTitle = GoogleFonts.openSans(
   fontSize: 20,
   fontWeight: FontWeight.w600,
 );
+TextStyle walletCardText = GoogleFonts.openSans(
+  color: Colors.black,
+  fontSize: 15,
+  fontWeight: FontWeight.w600,
+);
 
 TextStyle activeFilterTabText = GoogleFonts.openSans(
   fontSize: 12,
@@ -84,7 +90,29 @@ TextStyle inActiveFilterTabText = GoogleFonts.openSans(
   color: Colors.black,
 );
 
+TextStyle cardTextStyleBold = GoogleFonts.lato(
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+  color: Colors.white,
+);
+TextStyle walletCardPrice = GoogleFonts.lato(
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+  color: Colors.red,
+);
+
+TextStyle cardTextStyleLight = GoogleFonts.lato(
+  fontSize: 15,
+  fontWeight: FontWeight.w400,
+  color: Colors.white,
+);
+
 TextStyle redButtonText = GoogleFonts.openSans(
+  fontSize: 15,
+  fontWeight: FontWeight.w600,
+);
+TextStyle lightRedButtonText = GoogleFonts.openSans(
+  color: primaryColor,
   fontSize: 15,
   fontWeight: FontWeight.w600,
 );
@@ -95,8 +123,23 @@ TextStyle greyTextProuct = GoogleFonts.openSans(
   color: primaryGrey,
 );
 
+TextStyle descriptionLight = GoogleFonts.openSans(
+  fontSize: 12,
+  color: Colors.grey[400],
+  fontWeight: FontWeight.w600,
+);
+
 ButtonStyle redButtonStyle = ElevatedButton.styleFrom(
   backgroundColor: primaryColor,
+  foregroundColor: Colors.white,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(35),
+  ),
+);
+
+ButtonStyle lightRedButtonStyle = ElevatedButton.styleFrom(
+  elevation: 0.0,
+  backgroundColor: lightPrimaryColor,
   foregroundColor: Colors.white,
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(35),

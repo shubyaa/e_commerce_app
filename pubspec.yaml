@@ -41,12 +41,16 @@ dependencies:
   flutter_switch: ^0.0.2
   syncfusion_flutter_sliders: ^21.1.35
 
+  fluttertoast: ^8.2.1
+  proste_bezier_curve: ^2.0.2
+  flutter_credit_card: ^3.0.6
+  smooth_page_indicator: ^1.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_zoom_drawer: ^3.0.4+1
-  fluttertoast: ^8.2.1
+  # fluttertoast: ^8.2.1
   custom_switch: ^0.0.1
   toggle_switch: ^2.0.1
   shimmer: ^2.0.0

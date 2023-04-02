@@ -2,6 +2,7 @@ import 'package:e_commerce_app/screens/MyCart.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:e_commerce_app/screens/Increment.dart';
+import 'package:e_commerce_app/screens/productDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -64,7 +65,7 @@ Widget ProductCardWidget(
   return InkWell(
     onTap: () {
       Navigator.of(context, rootNavigator: true)
-          .push(MaterialPageRoute(builder: (context) => MyCart()));
+          .push(MaterialPageRoute(builder: (context) => productDetails()));
     },
     child: Container(
       width: 180,

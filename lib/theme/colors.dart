@@ -10,3 +10,7 @@ const productBackgroundColor = Color.fromRGBO(255, 250, 246, 1.0);
 
 const themeOrange = Color.fromRGBO(246, 121, 82, 1.0);
 const iconGrey = Color.fromARGB(221, 59, 59, 59);
+
+const heartColor = Color.fromRGBO(249, 108, 108, 1.0);
+const backgroundProductDetailsColor = Color.fromRGBO(239, 239, 242, 1.0);
+const lightPrimaryColor = Color.fromRGBO(255, 233, 226, 1.0);
