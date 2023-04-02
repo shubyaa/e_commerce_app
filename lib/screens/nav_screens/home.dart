@@ -36,8 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DrawerPage()));
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Drawer()));
                     },
                     icon: const Icon(
                       Icons.notes_rounded,

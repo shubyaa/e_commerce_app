@@ -73,6 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  custom_switch:
+    dependency: "direct main"
+    description:
+      name: custom_switch
+      sha256: "72d2ad3cc47cb89a59e0726bb4502531adb4dcb7edb75f1e1d4d7ba6618a474a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -118,6 +126,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.4"
+  flutter_switch:
+    dependency: "direct main"
+    description:
+      name: flutter_switch
+      sha256: "19886fe9b436a5e6d76ffde5676f51b8a85054c1c8366efc01005e84bbf4c683"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -360,6 +376,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "1f1009b5845a1f88f1c5630212279540486f97409e9fc3f63883e71070d107bf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

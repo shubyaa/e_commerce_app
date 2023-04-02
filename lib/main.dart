@@ -1,10 +1,6 @@
-import 'package:e_commerce_app/screens/boarding_screens/login.dart';
-import 'package:e_commerce_app/screens/boarding_screens/onboarding1.dart';
-import 'package:e_commerce_app/screens/boarding_screens/onboarding2.dart';
-import 'package:e_commerce_app/screens/boarding_screens/onboarding3.dart';
 import 'package:e_commerce_app/screens/boarding_screens/signup.dart';
-import 'package:e_commerce_app/screens/nav_screens/drawer.dart';
-import 'package:e_commerce_app/screens/nav_screens/favourites.dart';
+import 'package:e_commerce_app/screens/boarding_screens/splash.dart';
+import 'package:e_commerce_app/screens/drawer_screens/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -29,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             // primarySwatch: primaryColor,
             ),
-        home: const SignupPage());
+        home: const SplashScreen());
   }
 }
 
