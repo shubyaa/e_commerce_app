@@ -1,23 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 
-import 'package:google_fonts/google_fonts.dart';
-
 // import 'package:flutter/e';
 
-class productDetails extends StatefulWidget {
-  const productDetails({super.key});
+class ProductDetails extends StatefulWidget {
+  const ProductDetails({super.key});
 
   @override
-  State<productDetails> createState() => _productDetailsState();
+  State<ProductDetails> createState() => _ProductDetailsState();
 }
 
-class _productDetailsState extends State<productDetails> {
+class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,7 +23,7 @@ class _productDetailsState extends State<productDetails> {
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.back,
               color: Colors.black,
             ),
@@ -38,7 +34,7 @@ class _productDetailsState extends State<productDetails> {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.favorite_rounded,
                 color: heartColor,
               ),
@@ -61,7 +57,7 @@ class _productDetailsState extends State<productDetails> {
             Container(
               width: MediaQuery.of(context).size.width,
               // height: MediaQuery.of(context).size.height * .4,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30.0),
@@ -135,7 +131,7 @@ class _productDetailsState extends State<productDetails> {
                             ScaffoldMessenger.of(context).showSnackBar(toast);
                           },
                           child: Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 100,
                               vertical: 15.0,
                             ),

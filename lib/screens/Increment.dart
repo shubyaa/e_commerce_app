@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 class Increment extends StatefulWidget {
   final int count;
@@ -14,6 +13,7 @@ class _IncrementState extends State<Increment> {
   @override
   void initState() {
     count1 = widget.count;
+    super.initState();
   }
 
   @override
@@ -35,7 +35,7 @@ class _IncrementState extends State<Increment> {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             count1.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 16,
             ),

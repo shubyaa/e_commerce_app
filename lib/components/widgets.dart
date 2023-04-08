@@ -1,12 +1,11 @@
-import 'package:e_commerce_app/screens/MyCart.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:e_commerce_app/screens/Increment.dart';
-import 'package:e_commerce_app/screens/productDetails.dart';
+import 'package:e_commerce_app/screens/ProductDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Card CategoryCardWidget(String imageAsset, String text) {
+Card categoryCardWidget(String imageAsset, String text) {
   return Card(
     elevation: 0.0,
     shape: RoundedRectangleBorder(
@@ -60,12 +59,12 @@ Widget sectionHead(String title, Function seeAll) {
   );
 }
 
-Widget ProductCardWidget(
+Widget productCardWidget(
     String assetImage, String title, int rate, BuildContext context) {
   return InkWell(
     onTap: () {
-      Navigator.of(context, rootNavigator: true)
-          .push(MaterialPageRoute(builder: (context) => productDetails()));
+      Navigator.of(context, rootNavigator: true).push(
+          MaterialPageRoute(builder: (context) => const ProductDetails()));
     },
     child: Container(
       width: 180,
@@ -126,7 +125,7 @@ Widget productListCard() {
           Row(
             children: [
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   right: 10,
                 ),
                 width: 80,
@@ -135,7 +134,7 @@ Widget productListCard() {
                   borderRadius: BorderRadius.circular(10.0),
                   color: productBackgroundColor,
                 ),
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
                   "assets/res/image.png",
                   fit: BoxFit.contain,
@@ -156,7 +155,7 @@ Widget productListCard() {
               ),
             ],
           ),
-          Increment(
+          const Increment(
             count: 10,
           ),
         ],

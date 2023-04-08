@@ -1,7 +1,4 @@
-import 'dart:math';
 import 'package:e_commerce_app/components/widgets.dart';
-import 'package:e_commerce_app/screens/nav_screens/drawer.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:flutter/material.dart';
@@ -17,16 +14,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _editingController = TextEditingController();
+  final _editingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        endDrawerEnableOpenDragGesture: true,
-        drawerEnableOpenDragGesture: true,
-        backgroundColor: backgroudColor,
-        body: Padding(
+    return Scaffold(
+      endDrawerEnableOpenDragGesture: true,
+      drawerEnableOpenDragGesture: true,
+      backgroundColor: backgroudColor,
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,8 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Drawer()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Drawer()));
                     },
                     icon: const Icon(
                       Icons.notes_rounded,
@@ -105,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * .7,
                       child: TextField(
                         controller: _editingController,
@@ -125,12 +122,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 15,
                           color: searchTextColor,
                         ),
-                        onSubmitted: (value) {
-                          print(value);
-                        },
+                        onSubmitted: (value) {},
                       ),
                     ),
-                    FilterButtonWidget(),
+                    filterButtonWidget(),
                   ],
                 ),
               ),
@@ -138,13 +133,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CategoryCardWidget(
+                  categoryCardWidget(
                       "assets/dress_categories/dress.png", "dress"),
-                  CategoryCardWidget(
+                  categoryCardWidget(
                       "assets/dress_categories/shirt.png", "shirt"),
-                  CategoryCardWidget(
+                  categoryCardWidget(
                       "assets/dress_categories/pants.png", "pants"),
-                  CategoryCardWidget(
+                  categoryCardWidget(
                       "assets/dress_categories/tshirt.png", "t-shirt"),
                 ],
               ),
@@ -156,13 +151,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    ProductCardWidget("assets/res/image.png",
+                    productCardWidget("assets/res/image.png",
                         "Long Sleeve Shirts", 300, context),
-                    ProductCardWidget("assets/res/image.png",
+                    productCardWidget("assets/res/image.png",
                         "Short Sleeve Shirts", 200, context),
-                    ProductCardWidget(
+                    productCardWidget(
                         "assets/res/image.png", "Loose Jeans", 100, context),
-                    ProductCardWidget("assets/res/image.png",
+                    productCardWidget("assets/res/image.png",
                         "Red half Tshirts", 300, context),
                   ],
                 ),
@@ -174,19 +169,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  InkWell FilterButtonWidget() {
-    List<bool> _selections = List.generate(3, (_) => false);
+  InkWell filterButtonWidget() {
+    SfRangeValues rangeValues = const SfRangeValues(0.0, 500.0);
+    SfRangeValues rangeValuesForDistance = const SfRangeValues(15.0, 50.0);
+    double startValue = rangeValues.start;
+    double endValue = rangeValues.end;
 
-    TextStyle _activeTextStyle = activeFilterTabText;
-    Color _activeButtonColor = primaryColor;
-
-    SfRangeValues _rangeValues = SfRangeValues(0.0, 500.0);
-    SfRangeValues _rangeValuesForDistance = SfRangeValues(15.0, 50.0);
-    double start_value = _rangeValues.start;
-    double end_value = _rangeValues.end;
-
-    double start_value_distance = _rangeValues.start;
-    double end_value_distance = _rangeValues.end;
+    double startValueDistance = rangeValues.start;
+    double endValueDistance = rangeValues.end;
 
     return InkWell(
       onTap: () {
@@ -259,14 +249,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             animate: true,
                             animationDuration: 200,
                             minWidth: MediaQuery.of(context).size.width,
-                            activeBgColor: [primaryColor],
+                            activeBgColor: const [primaryColor],
                             activeFgColor: Colors.white,
                             inactiveBgColor: Colors.transparent,
                             inactiveFgColor: Colors.black,
-                            labels: ['New Arrival', 'Top-Branding', 'Featured'],
-                            onToggle: (index) {
-                              print('switched to: $index');
-                            },
+                            labels: const [
+                              'New Arrival',
+                              'Top-Branding',
+                              'Featured'
+                            ],
+                            onToggle: (index) {},
                           ),
                         ),
                         Row(
@@ -278,19 +270,19 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: appBarTitle,
                             ),
                             Text(
-                              "₹ ${start_value.round()} - ₹ ${end_value.round()}",
+                              "₹ ${startValue.round()} - ₹ ${endValue.round()}",
                               style: productPrice,
                             ),
                           ],
                         ),
                         SfRangeSlider(
                           showLabels: false,
-                          values: _rangeValues,
+                          values: rangeValues,
                           onChanged: (value) {
                             setState(() {
-                              _rangeValues = value;
-                              start_value = value.start;
-                              end_value = value.end;
+                              rangeValues = value;
+                              startValue = value.start;
+                              endValue = value.end;
                             });
                           },
                           min: 0.0,
@@ -307,19 +299,19 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: appBarTitle,
                             ),
                             Text(
-                              "${start_value_distance.round()} km - ${end_value_distance.round()} km",
+                              "${startValueDistance.round()} km - ${endValueDistance.round()} km",
                               style: productPrice,
                             ),
                           ],
                         ),
                         SfRangeSlider(
                           showLabels: false,
-                          values: _rangeValuesForDistance,
+                          values: rangeValuesForDistance,
                           onChanged: (value) {
                             setState(() {
-                              _rangeValuesForDistance = value;
-                              start_value_distance = value.start;
-                              end_value_distance = value.end;
+                              rangeValuesForDistance = value;
+                              startValueDistance = value.start;
+                              endValueDistance = value.end;
                             });
                           },
                           min: 0.0,

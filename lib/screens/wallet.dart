@@ -17,7 +17,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
   @override
   Widget build(BuildContext context) {
     List<Widget> cards = List.generate(3, (index) {
-      return CardWidget(context, "Shubham Pednekar", 8451841565, "20/24");
+      return cardWidget(context, "Shubham Pednekar", 8451841565, "20/24");
     });
     return SafeArea(
       child: Scaffold(
@@ -25,7 +25,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.back,
               color: Colors.black,
             ),
@@ -36,7 +36,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.more_vert_rounded,
                 color: Colors.black,
               ),
@@ -65,13 +65,13 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                   onDotClicked: (index) {
                     controller.animateToPage(
                       index,
-                      duration: Duration(
+                      duration: const Duration(
                         milliseconds: 100,
                       ),
                       curve: Curves.ease,
                     );
                   },
-                  effect: WormEffect(
+                  effect: const WormEffect(
                     dotColor: Color.fromARGB(255, 211, 211, 211),
                     activeDotColor: primaryColor,
                     dotWidth: 10.0,
@@ -96,25 +96,25 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
               ),
               Column(
                 children: [
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
-                  WalletListCard("assets/res/image.png", "Loose T-shirts",
+                  walletListCard("assets/res/image.png", "Loose T-shirts",
                       "23rd March 2021", 550),
                 ],
               )
@@ -125,7 +125,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
     );
   }
 
-  Card WalletListCard(asset, name, time, price) {
+  Card walletListCard(asset, name, time, price) {
     return Card(
       elevation: 0.0,
       child: Padding(
@@ -172,19 +172,19 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
   }
 }
 
-Widget CardWidget(context, name, number, valid_thru) {
+Widget cardWidget(context, name, number, valid_thru) {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
   return Container(
-    margin: EdgeInsets.symmetric(
+    margin: const EdgeInsets.symmetric(
       horizontal: 5.0,
       vertical: 8.0,
     ),
-    padding: EdgeInsets.all(25.0),
+    padding: const EdgeInsets.all(25.0),
     width: MediaQuery.of(context).size.width * .9,
     height: MediaQuery.of(context).size.height * .25,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(15),
-      gradient: LinearGradient(
+      gradient: const LinearGradient(
         begin: Alignment.bottomLeft,
         end: Alignment.topRight,
         colors: [

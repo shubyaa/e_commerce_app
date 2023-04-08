@@ -1,10 +1,7 @@
 import 'package:e_commerce_app/components/widgets.dart';
-import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:e_commerce_app/screens/Increment.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});
@@ -21,7 +18,7 @@ class _MyCartState extends State<MyCart> {
         appBar: AppBar(
           centerTitle: true,
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.back,
               color: Colors.black,
             ),
@@ -80,7 +77,7 @@ class _MyCartState extends State<MyCart> {
                         style: redButtonStyle,
                         onPressed: () {},
                         child: Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 100,
                             vertical: 15.0,
                           ),
@@ -89,7 +86,7 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15.0,
                   ),
                 ],

@@ -123,8 +123,8 @@ class _LoginPageState extends State<LoginPage> {
               // color: const Color.fromRGBO(246, 121, 82, 1),
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomeScreen()));
                 },
                 child: const Text(
                   'Log in',
@@ -207,8 +207,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => SignupPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SignupPage()));
                   },
                   child: const Text(
                     'Sign up',

@@ -66,6 +66,11 @@ TextStyle seeAllText = GoogleFonts.openSans(
   fontWeight: FontWeight.w500,
   color: primaryGrey,
 );
+TextStyle greyText = GoogleFonts.openSans(
+  fontSize: 15,
+  fontWeight: FontWeight.w500,
+  color: primaryGrey,
+);
 
 TextStyle appBarTitle = GoogleFonts.openSans(
   color: Colors.black,

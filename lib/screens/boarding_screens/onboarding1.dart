@@ -1,17 +1,15 @@
 import 'package:e_commerce_app/screens/boarding_screens/onboarding2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class onBoarding extends StatefulWidget {
-  const onBoarding({super.key});
+class OnBoarding extends StatefulWidget {
+  const OnBoarding({super.key});
 
   @override
-  State<onBoarding> createState() => _onBoardingState();
+  State<OnBoarding> createState() => _OnBoardingState();
 }
 
-class _onBoardingState extends State<onBoarding> {
+class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,8 +100,8 @@ class _onBoardingState extends State<onBoarding> {
               // color: const Color.fromRGBO(246, 121, 82, 1),
               child: TextButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => onBoarding2()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const OnBoarding2()));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

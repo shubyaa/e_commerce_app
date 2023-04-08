@@ -16,7 +16,7 @@ class _SignupPageState extends State<SignupPage> {
 
   void goToHomePage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+        .push(MaterialPageRoute(builder: (context) => const HomeScreen()));
   }
 
   void showToast() {
@@ -271,8 +271,8 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const LoginPage()));
                   },
                   child: const Text(
                     'Log in',
