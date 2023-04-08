@@ -1,5 +1,5 @@
+import 'package:e_commerce_app/main.dart';
 import 'package:e_commerce_app/screens/boarding_screens/signup.dart';
-import 'package:e_commerce_app/screens/nav_screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -124,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const HomeScreen()));
+                      builder: (context) => const MyHomePage()));
                 },
                 child: const Text(
                   'Log in',

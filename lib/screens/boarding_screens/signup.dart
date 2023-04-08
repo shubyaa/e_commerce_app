@@ -281,7 +281,7 @@ class _SignupPageState extends State<SignupPage> {
                         fontSize: 14,
                         fontWeight: FontWeight.bold),
                   ),
-                )
+                ),
               ],
             )
           ],

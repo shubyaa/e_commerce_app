@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Shimmer.fromColors(
-          period: const Duration(seconds: 2),
+          period: const Duration(seconds: 3),
           direction: ShimmerDirection.ttb,
           baseColor: Colors.white,
           highlightColor: themeOrange,

@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/main.dart';
+import 'package:e_commerce_app/screens/boarding_screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -100,6 +101,9 @@ class _OnBoarding3State extends State<OnBoarding3> {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const MyHomePage()));
+
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

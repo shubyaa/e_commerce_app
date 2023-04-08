@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:e_commerce_app/screens/boarding_screens/splash.dart';
 import 'package:e_commerce_app/screens/nav_screens/favourites.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:e_commerce_app/screens/nav_screens/orders.dart';
 import 'package:e_commerce_app/screens/nav_screens/home.dart';
 import 'package:e_commerce_app/screens/nav_screens/profile.dart';
-import 'package:e_commerce_app/screens/boarding_screens/splash.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 
 void main() {
