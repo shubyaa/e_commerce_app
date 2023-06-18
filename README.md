@@ -4,13 +4,6 @@
 A very genorous E Commerce App using Flutter.
 
 
-## Badges
-
-
-[![18.3 Flutter](https://img.shields.io/badge/Flutter-)](https://choosealicense.com/licenses/mit/)
-
-[![GPLv3 License](https://img.shields.io/badge/minified%20size-6.65%20kB-informational)](https://opensource.org/licenses/)
-    
 ## Demo
 
 [![Video](https://github.com/shubyaa/e_commerce_app/blob/master/output/output.gif)](https://flutter.dev/)
