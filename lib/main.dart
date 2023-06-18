@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:e_commerce_app/screens/boarding_screens/splash.dart';
+import 'package:e_commerce_app/screens/SearchResult.dart';
 import 'package:e_commerce_app/screens/nav_screens/favourites.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           // primarySwatch: primaryColor,
           ),
       home: const SplashScreen(),
+      // home: SearchResult(query: "shirts"),
     );
   }
 }

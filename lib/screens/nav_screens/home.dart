@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/components/widgets.dart';
 import 'package:e_commerce_app/screens/drawer_screens/settings.dart';
-import 'package:e_commerce_app/screens/nav_screens/drawer.dart';
+import 'package:e_commerce_app/screens/SearchResult.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:e_commerce_app/theme/colors.dart';
 import 'package:e_commerce_app/theme/styles.dart';
@@ -124,7 +124,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 15,
                           color: searchTextColor,
                         ),
-                        onSubmitted: (value) {},
+                        onSubmitted: (value) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => SearchResult(
+                              query: _editingController.text,
+                            ),
+                          ));
+                        },
                       ),
                     ),
                     filterButtonWidget(),
